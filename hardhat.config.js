@@ -12,6 +12,7 @@ require("solidity-coverage");
 
 require("dotenv").config();
 
+const AURORA_PRIVATE_KEY = process.env.GNOSIS_PRIVATE_KEY || "";
 const GNOSIS_RPC = process.env.GNOSIS_RPC || "";
 const GNOSIS_PRIVATE_KEY = process.env.GNOSIS_PRIVATE_KEY || "";
 const GNOSISSCAN_API_KEY = process.env.GNOSISSCAN_API_KEY || "";
@@ -54,23 +55,22 @@ const exportNetworks = {
 };
 
 if (GNOSIS_PRIVATE_KEY != "") {
-  exportNetworks["gnosis"] = {
+  exportNetworks["chiado"] = {
     url: GNOSIS_RPC,
     accounts: [`${GNOSIS_PRIVATE_KEY}`],
+  };
+}
+if (AURORA_PRIVATE_KEY != "") {
+  exportNetworks["aurora"] = {
+    url: `https://testnet.aurora.dev`,
+    accounts: [`${AURORA_PRIVATE_KEY}`],
   };
 }
 
 if (MUMBAI_PRIVATE_KEY != "") {
   exportNetworks["mumbai"] = {
-    url: "https://polygon-testnet-rpc.allthatnode.com:8545",
+    url:`https://polygon-mumbai.g.alchemy.com/v2/${process.env.ALCHEMY_ID}`,
     accounts: [`${MUMBAI_PRIVATE_KEY}`],
-  };
-}
-
-if (POLYGON_PRIVATE_KEY != "") {
-  exportNetworks["polygon"] = {
-    url: "https://polygon.llamarpc.com",
-    accounts: [`${POLYGON_PRIVATE_KEY}`],
   };
 }
 

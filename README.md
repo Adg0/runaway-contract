@@ -1,4 +1,4 @@
- # Azuro-V2
+ # Runaway betting
 
 ## Test environment
 
