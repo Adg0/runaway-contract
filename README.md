@@ -1,4 +1,12 @@
- # Runaway betting
+# Runaway betting
+
+Runaway betting is an on-chain sports betting with social loging, on aurora chain.
+It utilizes a new Liquidity Pool design by azuro, the Liquidity Tree, which creates and maintains market liquidity.
+
+
+## Frontend
+
+[Source for Frontend](https://github.com/moonkey-global/moonkey-betting)
 
 ## Test environment
 
